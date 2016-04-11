@@ -12,7 +12,7 @@
 **/
 
 @media screen and (min-width:1500px){
-.container,.container-row ,.nav-wrap,.layout-wrap,.container-radio,#sitenews-wrap .bg-sitenews,body.page-template-page-articles-php #main-wrap,body.page-template-page-software-php #main-wrap{max-width:1392px;}
+.container,.container-row ,.nav-wrap,.layout-wrap,.container-radio,#sitenews-wrap .bg-sitenews,body.page-template-page-articles-php #main-wrap{max-width:1392px;}
 .shop .product-content{max-width:1300px;}
 #main-wrap-left,#loopad.container{max-width:1022px;}
 #blocks-bar #main-wrap-left{max-width: 1072px;}
@@ -27,7 +27,7 @@
 }
 
 @media screen and (max-width: 1499px) and (min-width:1360px){
-.container,.container-row ,.nav-wrap,.layout-wrap,.container-radio,#sitenews-wrap .bg-sitenews,body.page-template-page-articles-php #main-wrap,body.page-template-page-software-php #main-wrap{max-width:1250px;}
+.container,.container-row ,.nav-wrap,.layout-wrap,.container-radio,#sitenews-wrap .bg-sitenews,body.page-template-page-articles-php #main-wrap{max-width:1250px;}
 .container.blocks{max-width: 1248px;}
 .shop .product-content{max-width:1120px;}
 #main-wrap-left,#loopad.container{max-width:880px;}

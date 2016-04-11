@@ -212,9 +212,9 @@ body.home .breadcrumbs {background: #fff; padding: 25px 0;}
 
 /* Main Wrap*/
 body {width: 100%;}
-body.home #main-wrap-left,body.archive #main-wrap-left,body.search #main-wrap-left,body.page-template-page-articles-php #main-wrap-left,body.page-template-page-software-php #main-wrap-left{border: 0px solid #eaeaea;}
+body.home #main-wrap-left,body.archive #main-wrap-left,body.search #main-wrap-left,body.page-template-page-articles-php #main-wrap-left{border: 0px solid #eaeaea;}
 #main-wrap { width:100%; max-width: 100%; margin:0 auto;  position:relative; clear: both; overflow:auto;}
-body.page-template-page-articles-php #main-wrap,body.page-template-page-software-php #main-wrap{max-width: 1200px;}
+body.page-template-page-articles-php #main-wrap{max-width: 1200px;}
 #main-wrap-left {max-width:830px; width:100%; float:left;border-radius: 3px;margin-bottom: 10px;border: 1px solid #eaeaea;}
 .container {max-width: 1200px;min-width: 240px;width:100%;margin: 0 auto; position:relative;}
 .container-row {max-width: 1200px;min-width: 240px;width: 100%;margin: 0 auto; position:relative; overflow: hidden;}
