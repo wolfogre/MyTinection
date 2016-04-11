@@ -19,25 +19,10 @@ Template Name: 软件中心
 
 ?>
 <?php get_header(); ?>
-<?php $categories = get_categories();$sorts = array('likes'=>'喜欢最多','views'=>'浏览最多','comments'=>'评论最多','collects'=>'收藏最多');$timeframes = array('week'=>'一周内','month'=>'一月内','year'=>'一年内');$styles = array('nopic'=>'无图模式','titlelist'=>'标题模式'); ?>
+<?php $categories = '11';$sorts = array('likes'=>'喜欢最多','views'=>'浏览最多','comments'=>'评论最多','collects'=>'收藏最多');$timeframes = array('week'=>'一周内','month'=>'一月内','year'=>'一年内');$styles = array('nopic'=>'无图模式','titlelist'=>'标题模式'); ?>
 <div id="guide" class="container" style="margin-bottom:20px;">
     <div class="group">
         <ul>
-            <li class="column">
-                <a class="current">
-                    <i class="fa fa-bookmark"></i><?php if(isset($_GET['cat'])&&!empty($_GET['cat'])) {$current_cat = get_category($_GET['cat']); echo $current_cat->cat_name;} else {echo '不限类别';} ?><i class="fa fa-caret-down arrow"></i>
-                </a>
-                <ul class="sub">
-				<?php foreach ($categories as $cat){?>
-                    <?php $the_cat = isset($_GET['cat'])?$_GET['cat']:'';if($cat->cat_ID != $the_cat ){ ?>
-					<li><a href="<?php echo dynamic_url('cat',$cat->cat_ID); ?>"><?php echo $cat->cat_name; ?></a></li>
-					<?php } ?>
-				<?php } ?>
-				<?php if(isset($_GET['cat'])&&!empty($_GET['cat'])){?>
-					<li><a href="<?php echo dynamic_url('cat',''); ?>"><?php echo '不限类别'; ?></a></li>
-				<?php } ?>
-				</ul>
-            </li>
             <li class="sort">
                 <a class="current"><i class="fa fa-sort"></i><?php if(isset($_GET['sort'])&&!empty($_GET['sort'])) {$current_sort = $sorts[$_GET['sort']]; echo $current_sort;} else {echo '最新发布';} ?><i class="fa fa-caret-down arrow"></i></a>
                 <ul class="sub">
