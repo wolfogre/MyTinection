@@ -19,8 +19,67 @@ Template Name: 软件中心
 
 ?>
 <?php get_header(); ?>
-<?php $categories = 11;$sorts = array('likes'=>'喜欢最多','views'=>'浏览最多','comments'=>'评论最多','collects'=>'收藏最多');$timeframes = array('week'=>'一周内','month'=>'一月内','year'=>'一年内');$styles = array('nopic'=>'无图模式','titlelist'=>'标题模式'); ?>
-
+<?php $categories = get_categories();$sorts = array('likes'=>'喜欢最多','views'=>'浏览最多','comments'=>'评论最多','collects'=>'收藏最多');$timeframes = array('week'=>'一周内','month'=>'一月内','year'=>'一年内');$styles = array('nopic'=>'无图模式','titlelist'=>'标题模式'); ?>
+<div id="guide" class="container" style="margin-bottom:20px;">
+    <div class="group">
+        <ul>
+        	<li class="column">
+                <a class="current">
+                    <i class="fa fa-bookmark"></i><?php if(isset($_GET['cat'])&&!empty($_GET['cat'])) {$current_cat = get_category($_GET['cat']); echo $current_cat->cat_name;} else {echo '不限类别';} ?><i class="fa fa-caret-down arrow"></i>
+                </a>
+                <ul class="sub">
+				<?php foreach ($categories as $cat){?>
+                    <?php $the_cat = isset($_GET['cat'])?$_GET['cat']:'11';if($cat->cat_ID != $the_cat ){ ?>
+					<li><a href="<?php echo dynamic_url('cat',$cat->cat_ID); ?>"><?php echo $cat->cat_name; ?></a></li>
+					<?php } ?>
+				<?php } ?>
+				<?php if(isset($_GET['cat'])&&!empty($_GET['cat'])){?>
+					<li><a href="<?php echo dynamic_url('cat',''); ?>"><?php echo '不限类别'; ?></a></li>
+				<?php } ?>
+				</ul>
+            </li>
+            <li class="sort">
+                <a class="current"><i class="fa fa-sort"></i><?php if(isset($_GET['sort'])&&!empty($_GET['sort'])) {$current_sort = $sorts[$_GET['sort']]; echo $current_sort;} else {echo '最新发布';} ?><i class="fa fa-caret-down arrow"></i></a>
+                <ul class="sub">
+				<?php foreach($sorts as $key=>$sort){ ?>
+					<?php $the_sort = isset($_GET['sort'])?$_GET['sort']:''; if($key != $the_sort){ ?>
+					<li><a href="<?php echo dynamic_url('sort',$key); ?>"><?php echo $sort; ?></a></li>
+					<?php } ?>
+				<?php } ?>
+				<?php if(isset($_GET['sort'])&&!empty($_GET['sort'])){ ?>
+					<li><a href="<?php echo dynamic_url('sort',''); ?>"><?php echo '最新发布'; ?></a></li>
+				<?php } ?>
+				</ul>
+            </li>
+            <li class="timeframe">
+                <a class="current"><i class="fa fa-clock-o"></i><?php if(isset($_GET['timeframe'])&&!empty($_GET['timeframe'])) {$current_timeframe = $timeframes[$_GET['timeframe']]; echo $current_timeframe;} else {echo '不限时间';} ?><i class="fa fa-caret-down arrow"></i></a>
+                <ul class="sub">
+				<?php foreach($timeframes as $key=>$timeframe){ ?>
+					<?php $the_timeframe = isset($_GET['timeframe'])?$_GET['timeframe']:''; if($key != $the_timeframe){ ?>
+					<li><a href="<?php echo dynamic_url('timeframe',$key); ?>"><?php echo $timeframe; ?></a></li>
+					<?php } ?>
+				<?php } ?>
+				<?php if(isset($_GET['timeframe'])&&!empty($_GET['timeframe'])){ ?>
+					<li><a href="<?php echo dynamic_url('timeframe',''); ?>"><?php echo '不限时间'; ?></a></li>
+				<?php } ?>
+				</ul>
+            </li>
+			<li class="style">
+                <a class="current"><i class="fa fa-picture-o"></i><?php if(isset($_GET['style'])&&!empty($_GET['style'])) {$current_style = $styles[$_GET['style']]; echo $current_style;} else {echo '默认模式';} ?><i class="fa fa-caret-down arrow"></i></a>
+                <ul class="sub">
+				<?php foreach($styles as $key=>$style){ ?>
+					<?php $the_style = isset($_GET['style'])?$_GET['style']:''; if($key != $the_style){ ?>
+					<li><a href="<?php echo dynamic_url('style',$key); ?>"><?php echo $style; ?></a></li>
+					<?php } ?>
+				<?php } ?>
+				<?php if(isset($_GET['style'])&&!empty($_GET['style'])){ ?>
+					<li><a href="<?php echo dynamic_url('style',''); ?>"><?php echo '默认模式'; ?></a></li>
+				<?php } ?>
+				</ul>
+            </li>
+        </ul>
+    </div>
+</div>
 <div id="main-wrap" class="container two-col-container">
 	<?php dynamic_query(); ?>
 	
