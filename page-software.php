@@ -19,4 +19,4 @@ Template Name: 软件中心
 
 ?>
 
-<?php echo dynamic_url('cat','11'); ?>
+<?php header("Location: ".dynamic_url('cat','11'));?>
