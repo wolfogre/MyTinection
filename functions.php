@@ -671,8 +671,10 @@ function the_layout(){
 	$layout = 'blog';
 	if(isset($_GET['layout'])){
 		$layout = $_GET['layout'];
-	}elseif(ot_get_option('layout')){
+	/*}elseif(ot_get_option('layout')){
 		$layout = ot_get_option('layout');
+	by wolfogre
+	*/
 	}else{
 		$layout = 'blog';
 	}

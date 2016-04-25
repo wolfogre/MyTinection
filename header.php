@@ -99,10 +99,7 @@
 			<!-- /.Search button -->
 			<!-- Login status -->
 			<?php get_template_part('includes/head-login'); ?>
-			<!-- /.Login status -->
-			<!-- Focus us -->
-			<?php get_template_part('includes/focus'); ?>
-			<!-- /.Focus us -->			
+			<!-- /.Login status -->			
 			<!-- Menu Items Begin -->
 			<nav id="pri-nav" class="site-navigation pri-nav <?php if(ot_get_option('double_lan_menu')=='on')echo 'elan_menu'; ?>" role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'topbar', 'menu_class' => 'nav-menu', 'depth' => '2'  ) ); ?>
